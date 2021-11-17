@@ -51,10 +51,13 @@ mset key value key value
 
 # Expired
 
-ttl username1
--> -1
-expire username1 360
-ttl username1
--> 356
+ttl username1  
+-> -1  
+
+expire username1 360  
+
+ttl username1  
+-> 356  
+
 setex username2 "rocky bolboa" 360
 
