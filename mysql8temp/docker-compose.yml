@@ -2,11 +2,11 @@ version: '3.8'
 
 services:
   db:
-    container_name: mysql_57
-    image: mysql:5.7
+    container_name: mysql8kuliah
+    image: mysql:8.0
     restart: on-failure
     environment:
-      MYSQL_DATABASE: 'db'
+      MYSQL_DATABASE: 'rental_mobil'
       MYSQL_USER: 'user'
       MYSQL_PASSWORD: 'password'
       MYSQL_ROOT_PASSWORD: 'password'
@@ -15,8 +15,8 @@ services:
     expose:
       - '3306'
     volumes:
-      - my-db:/var/lib/mysql
+      - mysql8-db-temp:/var/lib/mysql
     command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
 # Names our volume
 volumes:
-  my-db:
+  mysql8-db-temp:

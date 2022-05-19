@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   db:
-    container_name: mysql_container
+    container_name: mysql8
     image: mysql:8.0
     restart: on-failure
     environment:
@@ -15,8 +15,8 @@ services:
     expose:
       - '3306'
     volumes:
-      - mysql-db:/var/lib/mysql
+      - mysql8-db:/var/lib/mysql
     command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
 # Names our volume
 volumes:
-  mysql-db:
+  mysql8-db:
