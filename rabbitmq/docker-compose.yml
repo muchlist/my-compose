@@ -7,5 +7,9 @@ services:
         - 5672:5672
         - 15672:15672
     volumes:
-        - ./data/rabbitmq/data/:/var/lib/rabbitmq/
-        - ./data/rabbitmq/log/:/var/log/rabbitmq
+        - rabbitmq-data:/var/lib/rabbitmq/
+        - rabbitmq-log:/var/log/rabbitmq
+volumes:
+  rabbitmq-data:
+  rabbitmq-log:
+  # pgadmin-data:
